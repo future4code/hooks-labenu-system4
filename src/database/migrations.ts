@@ -5,10 +5,9 @@ const createTables = async () => {
 
     try {
 
-    await connection.raw(`
+        await connection.raw(`
 
-    DROP TABLE IF EXISTS ${TABLE_TURMA}, ${TABLE_ESTUDANTE}, ${TABLE_HOBBY}, ${TABLE_DOCENTE};
-    
+        
     CREATE TABLE IF NOT EXISTS ${TABLE_TURMA}(
         id VARCHAR(255) PRIMARY KEY,
         nome VARCHAR(255),
@@ -21,20 +20,21 @@ const createTables = async () => {
         email VARCHAR(255) NOT NULL UNIQUE,
         data_nasc DATE NOT NULL,
         turma_id VARCHAR(255) NOT NULL UNIQUE,
-        FOREIGN KEY (turma_id) REFERENCES TABLE_TURMA(id)
+        FOREIGN KEY (turma_id) REFERENCES ${TABLE_TURMA}(id)
+        
     );
     
     CREATE TABLE IF NOT EXISTS ${TABLE_HOBBY}(
         id VARCHAR(255) PRIMARY KEY,
-        nome VARCHAR(255) NOT NULL UNIQUE,
+        nome VARCHAR(255) NOT NULL UNIQUE
     );
     
     CREATE TABLE IF NOT EXISTS ${TABLE_ESTUDANTE_HOBBY}(
         id VARCHAR(255) PRIMARY KEY,
         estudante_id VARCHAR(255)NOT NULL,
-        FOREIGN KEY (estudante_id) REFERENCES TABLE_ESTUDANTE(id),
-        hobby_id VARCHAR(255) NOT NULL UNIQUE,
-        FOREIGN KEY hobby_id REFERENCES TABLE_HOBBY(id)
+        FOREIGN KEY (estudante_id) REFERENCES ${TABLE_ESTUDANTE}(id),
+        hobby_id VARCHAR(255) NOT NULL ,
+        FOREIGN KEY (hobby_id) REFERENCES ${TABLE_HOBBY}(id)
     );
     
     CREATE TABLE IF NOT EXISTS ${TABLE_DOCENTE}(
@@ -43,28 +43,28 @@ const createTables = async () => {
         email VARCHAR(255) NOT NULL UNIQUE,
         data_nasc DATE NOT NULL,
         turma_id VARCHAR(255) NOT NULL UNIQUE,
-        FOREIGN KEY turma_id REFERENCES TABLE_TURMA(id)
+        FOREIGN KEY (turma_id) REFERENCES ${TABLE_TURMA}(id)
     );
     
     CREATE TABLE IF NOT EXISTS ${TABLE_ESPECIALIDADE}(
         id VARCHAR(255) PRIMARY KEY,
-        nome VARCHAR(255) NOT NULL UNIQUE,
+        nome VARCHAR(255) NOT NULL UNIQUE
         );
         
         CREATE TABLE IF NOT EXISTS ${TABLE_DOCENTE_ESPECIALIDADE}(
             id VARCHAR(255) PRIMARY KEY,
             docente_id VARCHAR(255) NOT NULL UNIQUE,
-            FOREIGN KEY docente_id REFERENCES TABLE_DOCENTE(id)
-            especialidade_id VARCHAR(255) NOT NULL UNIQUE,
-            FOREIGN KEY especialidade_id REFERENCES TABLE_ESPECIALIDADE
+            FOREIGN KEY (docente_id) REFERENCES ${TABLE_DOCENTE}(id),
+            especialidade_id VARCHAR(255) NOT NULL,
+            FOREIGN KEY (especialidade_id) REFERENCES ${TABLE_ESPECIALIDADE}(id)
     );
     
         `)
 
         console.log("tabela criadas")
-   } catch (error: any) {
+    } catch (error: any) {
 
-    console.log("*", error.message)
+        console.log("*", error.message)
     }
 
 
