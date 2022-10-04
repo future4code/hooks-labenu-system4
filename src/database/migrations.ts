@@ -1,5 +1,4 @@
 import connection from "./connection"
-import { turma, purchases, users } from "./data"
 import { TABLE_TURMA, TABLE_ESTUDANTE, TABLE_HOBBY,TABLE_ESTUDANTE_HOBBY,TABLE_DOCENTE,TABLE_ESPECIALIDADE,TABLE_DOCENTE_ESPECIALIDADE  } from "./tableNames"
 
 const createTables = async () => {

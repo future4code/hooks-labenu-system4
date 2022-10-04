@@ -1,6 +1,4 @@
-// import { Turma } from "../models/User";
-// import { PurchaseDB } from "../models/Purchase";
-import { User } from "../models/User";
+import { Turma, Estudante, Hobby, Docente } from "../models/Dice";
 
 export const turma: Turma[] = [
     {
@@ -55,3 +53,4 @@ export const docente: Docente[] = [
         data_nasc: 6/11/1984       
     }
 ]
+
