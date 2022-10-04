@@ -1,0 +1,13 @@
+POST http://localhost:3003/product/create
+Content-Type: application/json
+
+{
+    "name": "Boné do Vasco", 
+    "price": 100, 
+    "image_url": "Url"
+}
+
+### 
+
+GET http://localhost:3003/products
+
