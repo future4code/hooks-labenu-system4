@@ -1,7 +1,7 @@
 import cors from 'cors'
 import dotenv from 'dotenv'
 import express from 'express'
-import { ping } from './endpoints/ping'
+// import { ping } from './endpoints/ping'
 
 
 dotenv.config()
@@ -15,7 +15,7 @@ app.listen(process.env.PORT || 3003, () => {
 })
 
 // Teste
-app.get("/ping", ping)
+// app.get("/ping", ping)
 
 // // Exercício 1 - Create users
 // app.post("/users", createUser)
