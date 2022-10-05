@@ -1,24 +1,14 @@
-import cors from 'cors'
-import dotenv from 'dotenv'
-import express from 'express'
-// import { ping } from './endpoints/ping'
+import { app } from "./app";
+import { createTurma } from "./endpoints/createTurma";
+import { getTurma } from "./endpoints/getTurma";
 
 
-dotenv.config()
-const app = express()
+// Get Turma
+app.get("/getallturma", getTurma)
 
-app.use(express.json())
-app.use(cors())
-
+// Get Turma Ativa
 
 
+// Create Turma
+app.post("/createturma", createTurma)
 
-
-
-
-app.listen(process.env.PORT || 3003, () => {
-  console.log(`Servidor rodando na porta ${process.env.PORT || 3003}`)
-})
-
-// Teste
-// app.get("/ping", ping)
