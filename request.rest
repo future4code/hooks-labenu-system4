@@ -1,13 +1,12 @@
-POST http://localhost:3003/product/create
+###
+POST http://localhost:3003/createturma
 Content-Type: application/json
 
-{
-    "name": "Boné do Vasco", 
-    "price": 100, 
-    "image_url": "Url"
+{     
+    "name": "Hooper </3"   
 }
 
 ### 
+GET http://localhost:3003/getallturma
 
-GET http://localhost:3003/products
-
+###

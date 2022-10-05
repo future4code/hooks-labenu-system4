@@ -1,14 +1,13 @@
-import BaseDatabase from "./BaseDatabase"
+import BaseDatabase from "../database/BaseDatabase"
 
-export abstract class PessoaDatabase extends BaseDatabase{
+export abstract class Pessoa{
     constructor(
         private id: string,
         private nome: string,
         private email: string,
         private data_nasc: Date,
         private turma_id: string
-    ) {
-        super()
+    ) {        
     }
 
     public async getId() {
