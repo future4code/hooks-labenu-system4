@@ -1,12 +1,21 @@
 ###
-POST http://localhost:3003/createturma
+POST http://localhost:3003/turma/create
 Content-Type: application/json
 
 {     
     "name": "Hooper </3"   
 }
 
-### 
-GET http://localhost:3003/getallturma
+### Traz todas as turmas
+GET http://localhost:3003/turmas
+
+### Traz as turmas ativas
+GET http://localhost:3003/turmas/ativas
 
 ###
+GET http://localhost:3003/turmas/1665010242337
+
+###
+PUT http://localhost:3003/turma/modulo/edit/1665010242337?modulo=1
+
+

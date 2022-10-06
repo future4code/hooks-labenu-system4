@@ -12,12 +12,21 @@ export class TurmaDatabase extends BaseDatabase {
     const result = await BaseDatabase.connection(this.TABLE_NAME).select();
     return result;
   }
+
   public async getTurmaAtiva() {
-    const result = await BaseDatabase.connection.raw(`
-    SELECT * FROM ${this.TABLE_NAME}
-    WHERE modulo 
-    `);
+    const result = await BaseDatabase.connection(this.TABLE_NAME).where("modulo", "<>" , "0")
     return result;
   }
+
+  public async getTurmaById(id:string){
+    const result = await BaseDatabase.connection(this.TABLE_NAME).where("id", id)
+    return result
+  } 
+  
+  public async editModuloTurma(id:string, modulo:number){
+    const result = await BaseDatabase.connection(this.TABLE_NAME).where("id", id).update("modulo", modulo)
+    return result
+  } 
+
 }
 export default TurmaDatabase;
