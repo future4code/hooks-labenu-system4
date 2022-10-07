@@ -4,14 +4,21 @@ import BaseDatabase from "../BaseDatabase";
 export class EstudanteDataBase extends BaseDatabase {
   TABLE_NAME = "ESTUDANTE";
 
-  public async createEstudante(estudante: Estudante) {
-    await BaseDatabase.connection(this.TABLE_NAME).insert(estudante);
+  public async getAll(): Promise<any> {
+    return await super.getAll()
+
   }
 
-  // public async getAllEstudante(estudante: Estudante) {
-  //   const result = await BaseDatabase.connection(this.TABLE_NAME).insert(estudante)
+  public async getName(name: string) {
+    return await super.getByName(name)
+  }
 
-  //   return result;
-  // }
+  public async create(estudante: Estudante) {
+    super.create(estudante)
+  }
+
+  public async update(id: string, altercao: string, coluna: string) {
+    super.update(id, altercao, coluna)
+  }
 }
 export default EstudanteDataBase;
