@@ -5,8 +5,14 @@ import BaseDatabase from "../BaseDatabase";
 export class DocenteEspecialidadeDatabase extends BaseDatabase {
   TABLE_NAME = "ESPECIALIDADE";
 
-  public async createEspecialidade(especialidade: Especialidade) {
-    await BaseDatabase.connection(this.TABLE_NAME).insert(especialidade);
+  public async create(especialidade: Especialidade) {
+    return super.create(especialidade);
   }
+
+  public async update(id: string, alteracao: any, coluna: any) {
+    return super.update(id, alteracao, coluna);
+  }
+
+
 }
 export default DocenteEspecialidadeDatabase;

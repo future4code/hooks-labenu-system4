@@ -11,7 +11,7 @@ export const createTurma = async (req: Request, res: Response) => {
     if (!name) throw new Error("Parâmetro inválido");
     const newTurma = new Turma(Date.now().toString(), name, 0);
     const newTurmaDatabase = new TurmaDatabase();
-    newTurmaDatabase.createTurma(newTurma);
+    newTurmaDatabase.create(newTurma);
     res.status(200).send({ message: "Turma criada", turma: newTurma });
   } catch (error:any) {
     res.status(errorCode).send(error.message);

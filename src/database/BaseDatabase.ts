@@ -15,32 +15,36 @@ abstract class BaseDatabase {
             multipleStatements: true
         },
     });
+    abstract TABLE_NAME: string    
+    
+     // Adicionar item a tabela
+     protected async create(item: any) {
+       const result = await BaseDatabase.connection(this.TABLE_NAME).insert    (item);
+       return result
+    }
 
-    abstract TABLE_NAME: string
-
+    // Trazer todas as informações da tabela
     protected async getAll() {
         const result = await BaseDatabase.connection(this.TABLE_NAME).select();
         return result
     }
 
+    //Procurar por nome
     protected async getByName(name: string) {
         const result = await BaseDatabase.connection(this.TABLE_NAME).select().where("nome", name);
         return result
     }
 
+    // Procurar por ID
     public async getById(id: string) {
         const result = await BaseDatabase.connection(this.TABLE_NAME).where("id", id)
         return result
     }
 
-    // id da pessoa q vc quer alterar, 
+    // Alterar por ID 
     public async update(id: string, alteracao: any, coluna: any) {
-        await BaseDatabase.connection(this.TABLE_NAME).where("id", id).update(coluna, alteracao)
-    }
-
-    protected async create(item: any) {
-        await BaseDatabase.connection(this.TABLE_NAME).insert(item);
+        const result =  await BaseDatabase.connection(this.TABLE_NAME).where("id", id).update(coluna, alteracao, coluna)
+        return result
     }
 }
-
 export default BaseDatabase
