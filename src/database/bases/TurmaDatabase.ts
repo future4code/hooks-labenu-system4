@@ -1,8 +1,8 @@
-import { Turma } from "../models/Turma";
-import BaseDatabase from "./BaseDatabase";
+import { Turma } from "../../models/Turma";
+import BaseDatabase from "../BaseDatabase";
 
 export class TurmaDatabase extends BaseDatabase {
-  TABLE_NAME = "TURMA";
+  TABLE_NAME = "TABLE_TURMA";
 
   public async createTurma(turma: Turma) {
     await BaseDatabase.connection(this.TABLE_NAME).insert(turma);

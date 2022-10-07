@@ -1,6 +1,6 @@
-import { Estudent_hobby } from "../models/Estudent_hobbys";
-import BaseDatabase from "./BaseDatabase";
-import { TABLE_ESTUDANTE_HOBBY, TABLE_HOBBY } from "./tableNames";
+import { Estudent_hobby } from "../../models/Estudent_hobbys";
+import BaseDatabase from "../BaseDatabase";
+import { TABLE_ESTUDANTE_HOBBY, TABLE_HOBBY } from "../tableNames";
 
 export class EstudanteHobyDataBase extends BaseDatabase{
     TABLE_NAME = TABLE_ESTUDANTE_HOBBY

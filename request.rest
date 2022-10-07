@@ -3,7 +3,7 @@ POST http://localhost:3003/turma/create
 Content-Type: application/json
 
 {     
-    "name": "Hooper </3"   
+    "name": "HHHHOOKS <3"   
 }
 
 ### Traz todas as turmas
@@ -18,4 +18,13 @@ GET http://localhost:3003/turmas/1665010242337
 ###
 PUT http://localhost:3003/turma/modulo/edit/1665010242337?modulo=1
 
+###
+POST http://localhost:3003/estudante/create
+Content-Type: application/json
 
+{     
+    "name": "Wictor",
+    "email": "wictor@gmail.com" ,
+    "data_nasc": "1993-08-13",
+    "turma_id": "1665104632209" 
+}

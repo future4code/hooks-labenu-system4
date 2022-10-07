@@ -1,5 +1,5 @@
 import { Request, Response} from "express";
-import { EstudanteHobyDataBase } from "../../database/EstudanteHobbyDataBase";
+import { EstudanteHobyDataBase } from "../../database/bases/EstudanteHobbyDataBase";
 
 export const getEstudanteHobby = async (req: Request, res: Response)=>{
     

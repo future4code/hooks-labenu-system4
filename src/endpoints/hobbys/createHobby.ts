@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { HobbyDataBase } from "../../database/HobyDataBase";
+import { HobbyDataBase } from "../../database/bases/HobyDataBase";
 import { Hobby } from "../../models/Hobby";
 
 export const createHobby = async (req: Request, res: Response) => {
