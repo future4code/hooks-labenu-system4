@@ -1,27 +1,25 @@
 import { Request, Response } from "express";
-import { estudante } from "../../database/data";
-import EstudanteDataBase from "../../database/EstudanteDataBase";
-import { EstudanteHobyDataBase } from "../../database/EstudanteHobbyDataBase";
-import { HobbyDataBase } from "../../database/HobyDataBase";
-import TurmaDatabase from "../../database/TurmaDatabase";
+import EstudanteDataBase from "../../database/bases/EstudanteDataBase";
+import { EstudanteHobyDataBase } from "../../database/bases/EstudanteHobbyDataBase";
+import { HobbyDataBase } from "../../database/bases/HobyDataBase";
+import TurmaDatabase from "../../database/bases/TurmaDatabase";
 import { Estudante } from "../../models/Estudante";
 import { Estudent_hobby } from "../../models/Estudent_hobbys";
 import { Hobby } from "../../models/Hobby";
-import { Turma } from "../../models/Turma";
 
 export const createEstudante = async (req: Request, res: Response) => {
   let errorCode = 400;
 
   try {
-    const name = req.body.name;
+    const nome = req.body.name;
     const email = req.body.email;
     const data_nasc = req.body.data_nasc;
     const turma_id = req.body.turma_id;
     const hobbies = req.body.hobbies;
 
-    if (!name || !email || !data_nasc || !turma_id) throw new Error("Parâmetro inválido");
+    // if (!nome || !email || !data_nasc || !turma_id) throw new Error("Parâmetro inválido");
     const id = Date.now().toString()
-    const newEstudante = new Estudante(id, name, email, data_nasc, turma_id);
+    const newEstudante = new Estudante(id, nome, email, data_nasc, turma_id);
     const newEstudanteDatabase = new EstudanteDataBase();
     await newEstudanteDatabase.createEstudante(newEstudante);
 

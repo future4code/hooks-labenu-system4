@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import TurmaDatabase from "../../database/TurmaDatabase";
+import TurmaDatabase from "../../database/bases/TurmaDatabase";
 
 export const getTurmaById = async (req: Request, res: Response) => {
   let errorCode = 400;

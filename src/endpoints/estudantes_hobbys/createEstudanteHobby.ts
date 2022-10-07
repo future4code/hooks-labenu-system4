@@ -1,5 +1,5 @@
  import { Request, Response} from "express";
-import { EstudanteHobyDataBase } from "../../database/EstudanteHobbyDataBase";
+import { EstudanteHobyDataBase } from "../../database/bases/EstudanteHobbyDataBase";
 import { Estudent_hobby } from "../../models/Estudent_hobbys";
 
  export const createEstudanteHobby = async (req: Request, res: Response) => {

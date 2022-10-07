@@ -1,5 +1,3 @@
-import BaseDatabase from "../database/BaseDatabase";
-
 export class Turma {
    
 
