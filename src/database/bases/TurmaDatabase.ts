@@ -2,7 +2,7 @@ import { Turma } from "../../models/Turma";
 import BaseDatabase from "../BaseDatabase";
 
 export class TurmaDatabase extends BaseDatabase {
-  TABLE_NAME = "TABLE_TURMA";
+  TABLE_NAME = "TURMA";
 
   public async createTurma(turma: Turma) {
     await BaseDatabase.connection(this.TABLE_NAME).insert(turma);
@@ -18,9 +18,8 @@ export class TurmaDatabase extends BaseDatabase {
     return result;
   }
 
-  public async getTurmaById(id:string){
-    const result = await BaseDatabase.connection(this.TABLE_NAME).where("id", id)
-    return result
+  public async getById(id:string){
+    return super.getById(id)
   } 
   
   public async editModuloTurma(id:string, modulo:number){

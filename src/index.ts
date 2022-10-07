@@ -9,6 +9,8 @@ import { getTurma } from "./endpoints/turmas/getTurma";
 import { getTurmaAtiva } from "./endpoints/turmas/getTurmaAtiva";
 import { getTurmaById } from "./endpoints/turmas/getTurmaById";
 import {getEstudanteHobby} from "./endpoints/estudantes_hobbys/getHobbyEstudent"
+import getStudantes from "./endpoints/estudantes/getStudantes";
+import alterarTurma from "./endpoints/estudantes/alterarTurma";
 
 //Turmas
 
@@ -44,4 +46,8 @@ app.post("/hobby/estudante", createEstudanteHobby)
 
 app.post("/estudante/create", createEstudante)
 
+app.get("/estudante", getStudantes)
+
 app.get("/estudante/hobbys/:idEstudante", getEstudanteHobby)
+
+app.put("/estudante/turma", alterarTurma)

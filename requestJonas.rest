@@ -3,7 +3,7 @@ POST http://localhost:3003/turma/create
 Content-Type: application/json
 
 {     
-    "name": "Hooks <3"   
+    "name": "Hooper </3"   
 }
 
 ### Traz todas as turmas
@@ -37,16 +37,24 @@ POST http://localhost:3003/estudante/create
 Content-Type: application/json
 
 {
-    "name" : "jessy",
-    "email": "jessyY@gmail.com",
+    "name" : "jonas",
+    "email": "jonaslevy@gmail.com",
     "data_nasc": "1991/08/04",
     "turma_id":"1665073730104",
-    "hobbies":["Ver instagram", "Dormir"]
+    "hobbies":[ "Dirigir"]
 }
 
+// pega todos os estudantes e se passar o nome por query(name) ele pega só o estudante passado
 ###
-GET http://localhost:3003/estudante/hobbys/1665078115772
+GET http://localhost:3003/estudante?name=jessy
 
 ###
+PUT http://localhost:3003/estudante/turma
+Content-Type: application/json
 
+{
+    "id": "1665078115772",
+    "alteracao":"1665164402777",
+    "coluna":"turma_id"
+}
 
