@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import EstudanteDataBase from "../../database/bases/EstudanteDataBase";
 
 export const getStudantes = async (req: Request, res: Response) => {
+    let errorCode = 400;
 
     try {
         const estudanteDb = new EstudanteDataBase()
@@ -9,7 +10,7 @@ export const getStudantes = async (req: Request, res: Response) => {
         const name = req.query.name as string
 
         if(name){
-            const result = await estudanteDb.getName(name) 
+            const result = await estudanteDb.getByName(name) 
             res.status(200).send(result)
         }
 
@@ -17,7 +18,7 @@ export const getStudantes = async (req: Request, res: Response) => {
         res.status(200).send(result)
 
     } catch (error: any) {
-        res.send(error.message).status(400)
+    res.status(errorCode).send(error.message);
     }
 }
 

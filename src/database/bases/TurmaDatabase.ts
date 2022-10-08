@@ -4,13 +4,12 @@ import BaseDatabase from "../BaseDatabase";
 export class TurmaDatabase extends BaseDatabase {
   TABLE_NAME = "TURMA";
 
-  public async createTurma(turma: Turma) {
-    await BaseDatabase.connection(this.TABLE_NAME).insert(turma);
+  public async create(turma: Turma) {
+    return super.create(turma)
   }
 
-  public async getAllTurma() {
-    const result = await BaseDatabase.connection(this.TABLE_NAME).select();
-    return result;
+  public async getAll() {
+   return super.getAll()
   }
 
   public async getTurmaAtiva() {
@@ -22,9 +21,8 @@ export class TurmaDatabase extends BaseDatabase {
     return super.getById(id)
   } 
   
-  public async editModuloTurma(id:string, modulo:number){
-    const result = await BaseDatabase.connection(this.TABLE_NAME).where("id", id).update("modulo", modulo)
-    return result
+  public async update(id:string, alteracao:any, coluna:any){ 
+        return super.update(id, alteracao, coluna)
   } 
 
 }

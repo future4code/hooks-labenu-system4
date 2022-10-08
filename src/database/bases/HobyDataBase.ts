@@ -5,12 +5,11 @@ import { TABLE_HOBBY } from "../tableNames";
 export class HobbyDataBase extends BaseDatabase {
     TABLE_NAME: string = TABLE_HOBBY
 
-    public async getHobbys (){
-        const result = await BaseDatabase.connection(this.TABLE_NAME).select()
-        return result
-    }
+    public async getAll() {
+        return super.getAll()
+       }
 
-    public async createHobby(hobby: Hobby) {
-        await BaseDatabase.connection(this.TABLE_NAME).insert(hobby)
-    }
+       public async create(hobby: Hobby) {
+        return super.create(hobby)
+      }
 }
