@@ -5,19 +5,19 @@ export class EstudanteDataBase extends BaseDatabase {
   TABLE_NAME = "ESTUDANTE";
 
   public async getAll() {
-    return super.getAll()
-   }
+    return super.getAll();
+  }
 
   public async getByName(name: string) {
-    return await super.getByName(name)
+    return await super.getByName(name);
   }
 
   public async create(estudante: Estudante) {
-    return super.create(estudante)
+    return super.create(estudante);
   }
 
-  public async update(id:string, alteracao:any, coluna:any){ 
-    return super.update(id, alteracao, coluna)
-} 
+  public async update(id: string, alteracao: any, coluna: any) {
+    return super.update(id, alteracao, coluna);
+  }
 }
 export default EstudanteDataBase;

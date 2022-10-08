@@ -14,40 +14,64 @@ import alterarTurma from "./endpoints/estudantes/alterarTurma";
 
 //Turmas
 
+// Cria uma turma
+app.post("/turma/create", createTurma)
+
 // Mostra todas as turmas
 app.get("/turmas", getTurma)
 
 // Mostra todas as turmas ativas
 app.get("/turmas/ativas", getTurmaAtiva)
 
-// Pegar turmas por id
+// Pega turmas por id
 app.get("/turmas/:id", getTurmaById)
 
-// Cria uma turma
-app.post("/turma/create", createTurma)
-
-// Edita modulo
+// Edita modulo da turma
 app.put("/turma/modulo/edit/:id", editModulo)
 
 // ====================================================
 
 // Estudante
 
+// Cria novo estudante
+app.post("estudante/create", createEstudante)
+
+// Busca todos os estudantes
+app.get("/estudante", getStudantes)
+
+// Altera estudante de turma
+app.put("/estudante/turma/edit", alterarTurma)
+
+// Busca os hoobys dos estudantes
+app.get("/estudante/hobbys/:idEstudante", getEstudanteHobby)
+
+//======================================================
+
+// Hobbys
+
+// Cria novo hobby
+app.post("/hobby/create", createHobby)
+
+// Pega todos os hobbys
+app.get("/hobbys", getHobbys)
+
+// Cria  hobby para estudante
+app.post("/hobby/estudante", createEstudanteHobby)
 
 
 //======================================================
-// Hobbys
 
-app.post("/hobby/create", createHobby)
+// 
 
-app.get("/hobbys", getHobbys)
+//======================================================
 
-app.post("/hobby/estudante", createEstudanteHobby)
+// 
 
-app.post("/estudante/create", createEstudante)
+//======================================================
 
-app.get("/estudante", getStudantes)
+// 
 
-app.get("/estudante/hobbys/:idEstudante", getEstudanteHobby)
+//======================================================
 
-app.put("/estudante/turma", alterarTurma)
+// 
+

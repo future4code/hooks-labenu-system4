@@ -11,9 +11,9 @@ export const alterarTurma = async (req: Request, res: Response) => {
 
     if(!id || !alteracao || !coluna) throw new Error("body inválido");
 
-    const estudanteDb = new EstudanteDataBase();
+    // const estudanteDb = new EstudanteDataBase();
     
-    await estudanteDb.update(id, alteracao, coluna);
+    await new EstudanteDataBase().update(id, alteracao, coluna);
     res.status(200).send("turma alterada");
 
   } catch (error:any) {
