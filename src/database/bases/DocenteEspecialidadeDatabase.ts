@@ -12,7 +12,5 @@ export class DocenteEspecialidadeDatabase extends BaseDatabase {
   public async update(id: string, alteracao: any, coluna: any) {
     return super.update(id, alteracao, coluna);
   }
-
-
 }
 export default DocenteEspecialidadeDatabase;

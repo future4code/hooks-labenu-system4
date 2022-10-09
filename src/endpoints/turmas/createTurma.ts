@@ -13,7 +13,7 @@ export const createTurma = async (req: Request, res: Response) => {
     const newTurmaDatabase = new TurmaDatabase();
     newTurmaDatabase.create(newTurma);
     res.status(200).send({ message: "Turma criada", turma: newTurma });
-  } catch (error:any) {
+  } catch (error: any) {
     res.status(errorCode).send(error.message);
   }
 };

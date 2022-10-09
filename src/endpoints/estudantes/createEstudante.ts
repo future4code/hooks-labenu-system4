@@ -17,9 +17,9 @@ export const createEstudante = async (req: Request, res: Response) => {
     const turma_id = req.body.turma_id;
     const hobbies = req.body.hobbies;
 
-    if (!nome || !email || !data_nasc || !turma_id) throw new Error("Parâmetro inválido");
-    
-    const id = Date.now().toString()
+    if (!nome || !email || !data_nasc || !turma_id)
+      throw new Error("Parâmetro inválido");
+    const id = Date.now().toString();
     const newEstudante = new Estudante(id, nome, email, data_nasc, turma_id);
     const newEstudanteDatabase = new EstudanteDataBase();
     await newEstudanteDatabase.create(newEstudante);
@@ -33,9 +33,10 @@ export const createEstudante = async (req: Request, res: Response) => {
     //   }
     // }
 
-    res.status(200).send({ message: "estudante criado!", aluno: {newEstudante, hobbies} });
- 
-  } catch (error:any) {
+    res
+      .status(200)
+      .send({ message: "Estudante criado!", aluno: { newEstudante, hobbies } });
+  } catch (error: any) {
     res.status(errorCode).send(error.message);
   }
 };

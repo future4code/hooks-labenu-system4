@@ -9,8 +9,9 @@ import { getTurma } from "./endpoints/turmas/getTurma";
 import { getTurmaAtiva } from "./endpoints/turmas/getTurmaAtiva";
 import { getTurmaById } from "./endpoints/turmas/getTurmaById";
 import {getEstudanteHobby} from "./endpoints/estudantes_hobbys/getHobbyEstudent"
-import getStudantes from "./endpoints/estudantes/getStudantes";
-import alterarTurma from "./endpoints/estudantes/alterarTurma";
+import getStudantes, { getStudanteByName } from "./endpoints/estudantes/getStudanteByName";
+import alterarTurma from "./endpoints/estudantes/changeTurma";
+import { getStudante } from "./endpoints/estudantes/getStudante";
 
 //Turmas
 
@@ -23,7 +24,7 @@ app.get("/turmas", getTurma)
 // Mostra todas as turmas ativas
 app.get("/turmas/ativas", getTurmaAtiva)
 
-// Pega turmas por id
+// Busca turmas por id
 app.get("/turmas/:id", getTurmaById)
 
 // Edita modulo da turma
@@ -37,7 +38,10 @@ app.put("/turma/modulo/edit/:id", editModulo)
 app.post("estudante/create", createEstudante)
 
 // Busca todos os estudantes
-app.get("/estudante", getStudantes)
+app.get("/estudantes", getStudante)
+
+// Busca estudante pelo nome
+app.get("/estudante/nome", getStudanteByName)
 
 // Altera estudante de turma
 app.put("/estudante/turma/edit", alterarTurma)
@@ -57,7 +61,6 @@ app.get("/hobbys", getHobbys)
 
 // Cria  hobby para estudante
 app.post("/hobby/estudante", createEstudanteHobby)
-
 
 //======================================================
 

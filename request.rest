@@ -13,7 +13,7 @@ GET http://localhost:3003/turmas
 ### Mostra todas as turmas ativas
 GET http://localhost:3003/turmas/ativas
 
-### Pega turmas por id
+### Busca turmas por id
 GET http://localhost:3003/turmas/1665010242337
 
 ### Edita modulo da turma
@@ -33,6 +33,12 @@ Content-Type: application/json
     "turma_id": "1665104632209" 
 }
 
+### Busca todos os estudantes
+GET http://localhost:3003/estudantes
+
+### Busca estudante pelo nome
+GET http://localhost:3003/estudante/nome/?name=Wictor
+
 ### Altera estudante de turma
 PUT http://localhost:3003/estudante/turma/edit
 Content-Type: application/json
@@ -42,5 +48,8 @@ Content-Type: application/json
     "alteracao": "2" ,
     "coluna": "turma"
 }
+
+### Busca os hoobys dos estudantes
+ GET http://localhost:3003/estudante/hobbys/1665104665605
 
 //////////////////////////////////////////////////////////////////////////////
