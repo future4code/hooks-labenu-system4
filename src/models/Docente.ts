@@ -7,7 +7,7 @@ export class Docente extends Pessoa {
     email: string,
     data_nasc: Date,
     turma_id: string,
-    private especialidades: string[]
+    private especialidades?: string[]
   ) {
     super(id, name, email, data_nasc, turma_id);
   }

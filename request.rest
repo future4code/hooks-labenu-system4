@@ -1,10 +1,11 @@
 #Turma
+
 ### Cria uma nova turma
 POST http://localhost:3003/turma/create
 Content-Type: application/json
 
 {     
-    "name": "HHHHOOKS <3"   
+    "name": "Turma HHHHOOKS <3"   
 }
 
 ### Mostra todas as turmas
@@ -19,9 +20,10 @@ GET http://localhost:3003/turmas/1665010242337
 ### Edita modulo da turma
 PUT http://localhost:3003/turma/modulo/edit/1665010242337?modulo=1
 
-//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
 
-# Estudante
+# Estudante 
+
 ### Cria um novo estudante
 POST http://localhost:3003/estudante/create
 Content-Type: application/json
@@ -52,4 +54,22 @@ Content-Type: application/json
 ### Busca os hoobys dos estudantes
  GET http://localhost:3003/estudante/hobbys/1665104665605
 
-//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+# Docente 
+
+### Cria um novo docente
+POST http://localhost:3003/docente/create
+Content-Type: application/json
+
+{     
+    "name": "Professor Hooks",
+    "email": "profhooks@gmail.com" ,
+    "data_nasc": "1984-05-21",
+    "turma_id": "1665104632209" 
+}
+
+### Busca todos os docentes
+GET http://localhost:3003/docentes
+
+//////////////////////////////////////////////////////////////////

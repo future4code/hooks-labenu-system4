@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { HobbyDataBase } from "../../database/bases/HobyDataBase";
 
-export const getHobbys = async (req: Request, res: Response) => {
+export const getAllHobbys = async (req: Request, res: Response) => {
   let errorCode = 400;
   try {
     const hobbyDB = new HobbyDataBase();
