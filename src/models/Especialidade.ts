@@ -1,13 +1,7 @@
-export class Especialidade{
- 
+export class Especialidade {
+  constructor(private id: string, public name: string) {}
 
-    constructor(
-        private id: string,
-       public name: string,
-    ) {
-    }
-    
-    public async getIdEspecialidade(){
-        return this.id
-    }
+  public async getIdEspecialidade() {
+    return this.id;
+  }
 }
