@@ -13,3 +13,5 @@
 
 ### 📋 O que não funciona: 
 - [ ]  (Não especificado)
+
+🖇️ Link da documentação: https://documenter.getpostman.com/view/21020459/2s83ziNNyR
