@@ -9,10 +9,10 @@ https://documenter.getpostman.com/view/21020459/2s83ziNNyR
 - **Jonas** - Lógica e estruturação
 - **Wictor** - Documentação e organização
 
-### 📋 O que funciona:
+## 📋 O que funciona:
  - [x]  Cadastrar turma, docente, hobby e estudante
  - [x]  Alterar turma, docente, hobby e estudante
  - [x]  Deletar turma, docente, hobby e estudante
 
-### 📋 O que não funciona: 
+## 📋 O que não funciona: 
 - [ ]  (Não especificado)
